@@ -10,7 +10,9 @@ char* cezar_cipher(char* str, int key){
         if (str [i] >= 'a' && str[i] <= 'z') {
             cipher[i]= ((str[i] - 'a') + key) % 26 + 'a';
         }
-        else {
+        else if (str [i] >= 'A' && str[i] <= 'Z') {
+            cipher[i]= ((str[i] - 'A') + key) % 26 + 'A';
+        } else {
             cipher[i] = str[i];
         }
     }
@@ -20,7 +22,9 @@ char* cezar_cipher(char* str, int key){
 int main () {
 
     char str[MAXN];
+    printf("Type in the keys: ");
     scanf("%s", str);
+    printf("Type in the number for the Cezar cipher: ");
     int key;
     scanf("%i", &key);
     char* cipher = cezar_cipher(str, key);
