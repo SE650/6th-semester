@@ -1,3 +1,5 @@
+//KEY IS faithful for vtext.txt
+
 #include <stdio.h>
 #include <string.h>
 #include <stdlib.h>
